@@ -1,0 +1,1262 @@
+@import url('https://fonts.googleleapis.com/css2?family=Poppin:wght@100;300;400;500;600&diplay=swap');
+
+
+:root{
+    --orange: #ff7800;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:2rem solid rgba(0,0,0,.1);
+    --outline-hover:1rem solid var(var(--black));
+}
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transform: all .2s linear;
+}
+
+html{
+    font-size: 50.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+body{
+    background: #eee;
+}
+
+section{
+    padding:2rem 9% ;
+}
+
+.heading{
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+}
+
+.heading span{
+    background: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: .5rem 3rem;
+    clip-path: (100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .logo i{
+color:var(--orange) ;
+}
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--black);
+}
+.header .navbar a:hover{
+    color: var(--orange);
+}  
+
+.header .icons div{
+    height: 4.5rem;
+    width:4.5rem;
+    line-height: 4.5rem;
+    border-radius: 4.5rem;
+    background: #eee;
+    color: var(--black);
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: .3rem ;
+    text-align: center;
+
+
+}
+.header .navbar.active{
+    right: 2rem;
+    transition: right 0.5s ease-in-out; 
+
+}
+
+
+.header .icons div:hover{
+    background:var(--orange) ;
+    color: #fff;
+}
+#menu-btn{
+    display: none;
+
+}
+
+
+.header .search-form {
+    position: absolute;
+    top: 110%;
+    right: -110%;
+    width: 35rem;
+    height: 3.5rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.5s ease-in-out; 
+}
+
+.header .search-form.active {
+    right: 2rem;
+}
+
+.header .search-form input {
+    height: 100%;
+    width: calc(100% - 4rem); 
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: #333; 
+    padding: 0 1.5rem; 
+}
+
+.header .search-form label {
+    font-size: 2.2rem;
+    padding: 0 1.5rem; 
+    color: #555; 
+    cursor: pointer;
+}
+
+.header .search-form label:hover {
+    color: #ff7f50;
+}
+
+
+.header .login-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+    transition: right 0.5s ease-in-out;
+
+}
+
+.header .login-form.active{
+right: 2rem;
+}
+
+.header .login-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box{
+    width: 100%;
+    margin:1rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+}
+
+.header .login-form p{
+    font-size: 1.4rem;
+    padding: .5rem;
+    color: var(--light-color);
+}  
+
+.header .login-form p a{
+    color: var(--orange);
+    text-decoration:underline ;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Add some styling to the dropdown links */
+.dropdown a {
+    cursor: pointer;
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/fresh-green-salad.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 17rem;
+    padding-bottom: 20rem;
+}
+
+.home .content{
+    text-align: center;
+    width: 60rem;
+    padding-bottom: 10rem;
+}
+
+.home .content h3{
+    color:var(--black);
+    font-size:3rem;
+    padding-bottom: 20px;
+}
+
+.home .content h3 span{
+    color: var(--orange);
+   
+}
+
+.home .content p{
+    color: var(--black);
+    font-size:1.7rem;
+    padding: 1rem 0;
+    line-height:1.8;
+}
+
+.features .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.features .box-container .box {
+    padding: 3rem 2rem;
+    background: #fff;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: outline-offset 0.5s, 
+    transform 0.3s ease-out,
+     box-shadow 0.3s ease-out;
+}
+
+.features .box-container .box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    outline: 2px solid var(--orange); 
+    }
+
+.features .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.features .box-container .box h3,
+.features .box-container .box p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.features .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.features .box-container .box p {
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+/* Product Slider Styles */
+.products .product-slider {
+    padding: 1rem;
+}
+
+.products .product-slider:first-child {
+    margin-bottom: 2rem;
+}
+
+.products .product-slider .box {
+    background: #fff;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 2rem 1rem; 
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: 0.2s linear;
+}
+
+
+.products .product-slider .box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    outline: 2px solid var(--orange); 
+    }
+    
+
+
+.products .product-slider .box img {
+    height: 12rem; 
+}
+
+.products .product-slider .box h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.products .product-slider .box .price {
+    font-size: 2.5rem;
+    color: var(--light-color);
+    padding: 1rem ;
+}
+
+.products .product-slider .box .stars i {
+    font-size: 1.7rem;
+    color: var(--orange);
+    padding: 1rem 0; 
+}
+
+/*
+.categories .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+}
+
+.categories .box-container .box {
+    padding: 3rem 2rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+}
+
+.categories .box-container .box:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    outline: 2px solid var(--orange); 
+    }
+
+
+
+.categories .box-container .box img {
+    margin: 1rem 0;
+    height: 15rem;
+}
+
+.categories .box-container .box h3{
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.categories .box-container .box p{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+*/
+
+
+
+
+
+/* main Card  and container*/
+
+
+.container {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    
+ 
+.card {
+    background-color: #fff;
+    margin: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+     width: 200px; /* Adjust the card width as needed */
+   border: 1px solid #ccc;
+  border-radius: 8px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ overflow: hidden;
+ text-align: center;
+padding: 10px;
+      
+  }
+
+  .card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+        outline: 2px solid var(--orange); 
+  }
+
+    .card .stars i{
+    font-size: 1.7rem;
+    color: var(--orange);
+    padding: 1rem 0; 
+  }
+  .card .stars i{
+    font-size: 1.7rem;
+    color: var(--orange);
+    padding: 1rem 0; 
+  }
+
+        .card h3 {
+            font-size: 2.5rem;
+          color: var(--black);
+
+        }
+        .card .price {
+            font-size: 2.5rem;
+color: var(--light-color);
+padding: 1rem ;
+        }
+
+
+/* Vegetables CSS*/
+.vegetable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/vege-home.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 17rem;
+    padding-bottom: 5rem;
+ 
+}
+
+.vegetable .content{
+    text-align: center;
+    width: 50rem;
+    padding-bottom: 10rem;
+}
+
+.vegetable .content h3{
+    color:var(--black);
+    font-size:2.5rem;
+    padding-bottom: 10px;
+}
+
+.vegetable .content h3 span{
+    color: var(--orange);
+   
+}
+
+.vegetable .content p{
+    color: var(--black);
+    font-size:1.7rem;
+    padding: 0.5rem 0;
+    line-height:1.8;
+
+}
+
+      .vegetable .card:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+            outline: 2px solid var(--orange); 
+      }
+    
+
+      
+/* Vegetables  CSS*/
+
+
+
+/* Fruits CSS*/
+.fruits{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(images/fruit-back1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 17rem;
+    padding-bottom: 5rem;
+ 
+}
+
+.fruits .content{
+    text-align: center;
+    width: 60rem;
+    padding-bottom: 10rem;
+}
+
+.fruits .content h3{
+    color:var(--black);
+    font-size:3.5rem;
+    padding-bottom: 20px;
+}
+
+.fruit .content h3 span{
+    color: var(--orange);
+   
+}
+
+/* Fruits CSS*/
+
+/* Agrochemical CSS*/
+
+.agroChemicals{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/banner2.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 17rem;
+    padding-bottom: 5rem;
+}
+
+.agroChemicals .content{
+     
+        text-align: center;
+        width: 50rem;
+        padding-bottom: 10rem;
+    }
+    
+    .agroChemicals .content h3{
+        color:var(--black);
+        font-size:2.5rem;
+        padding-bottom: 10px;
+    }
+    
+    .agroChemicals .content h3 span{
+        color: var(--orange);
+       
+    }
+    
+    .agroChemicals .content p{
+        color: var(--black);
+        font-size:1.7rem;
+        padding: 0.5rem 0;
+        line-height:1.8;
+    
+    }
+ 
+
+/* Agrochemical CSS*/
+
+
+/* farm equipments css */
+.equipments{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/farm-bag3.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 17rem;
+    padding-bottom: 5rem;
+ 
+}
+
+
+.equipments .content{
+     
+    text-align: center;
+    width: 50rem;
+    padding-bottom: 10rem;
+}
+
+.equipments .content h3{
+    color:var(--black);
+    font-size:2.5rem;
+    padding-bottom: 10px;
+}
+
+.equipments .content h3 span{
+    color: var(--orange);
+   
+}
+
+.equipments .content p{
+    color: var(--black);
+    font-size:1.7rem;
+    padding: 0.5rem 0;
+    line-height:1.8;
+
+}
+
+ 
+  
+  .card img {
+     width: 50%; /* Make the image fit within the card */
+            height: auto;
+            margin: 0 auto;
+  }
+
+  
+ 
+       
+/* farm machinary css */
+
+
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 1.5rem;
+
+}
+
+.blogs .box-container .box{
+overflow: hidden; 
+border-radius: .5rem;
+box-shadow: var(--box-shadow);
+background: #fff;
+}
+
+.blogs .box-container .box img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content {
+    padding: 2rem;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem; 
+    border-bottom: var(--border);
+}
+
+.blogs .box-container .content .box .icons a{
+    color: var(--light-color);
+    font-size: 1.5rem;
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color: var(--black);
+
+}
+
+.blogs .box-container .box .content .icons a i{
+    color: var(--orange);
+padding-right: .5rem;
+}
+
+.blogs .box-container .box .content h3{
+    line-height: 1.8;
+    color: var(--light-color);   
+    font-size: 2.2rem;
+    padding: .5rem 0;
+}
+ 
+.blogs .box-container .box .content p{ 
+    line-height: 1.8;
+    color: var(--light-color);
+    font-size: 1.5rem;
+    padding: .5rem 0;   
+
+}
+
+
+.blogs .box-container .box .icons a:hover{
+    color: var(--black);
+
+}
+
+
+.blogs .box-container .box .icons a i{
+    color: var(--orange);
+    font-size: 1.5rem;
+    padding-right: 5rem;
+}
+
+.footer{
+    background: #fff;
+}
+
+.footer .box-container{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+grid:1.5rem;
+}
+
+.footer .box-container .box h3
+{
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box h3 i
+{
+color: var(--orange);
+}
+
+.footer .box-container .box .links{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+   
+.footer .box-container .box .links i{
+    color: var(--orange);
+    padding-right: .5rem;
+    }
+    
+    .footer .box-container .box .links:hover i{
+        padding-right: 2rem;
+    
+    }
+
+.footer .box-container .box p{
+    line-height: 1.8;    
+    font-size: 1 .5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    }
+
+    .footer .box-container .box .share a{
+        height: 4rem; 
+        width: 4rem; ;
+        line-height: 4rem;
+        border-radius: .5rem;
+        font-size: 2rem;
+        color: var(--black);
+        margin-left: .2rem ;
+        background: #eee;
+        text-align: center;
+    }
+
+    .footer .box-container .box .share a:hover{
+        background: var(--orange);
+        color: #fff;
+    }
+
+    .footer .box-container .box .email {
+        width: 100%;
+        margin: 0.7rem 0;
+        padding: 1rem;
+        background-color: #eee;
+        font-size: 1.6rem;
+        color: var(--black);
+        text-transform: none;
+    }
+    
+    .footer .box-container .box .payment image{
+        margin-top: 5rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footer .credit{
+        text-align: center;
+        margin-top: 2rem; 
+        padding:1rem;  
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        color: var(--black);
+}
+
+  /* Style for the shopping cart */
+ .header .cart {
+    position: absolute;
+    max-height: 500px; /* Set the maximum height for the cart */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    top: 110%;
+    right: -110%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+    background: #eee;
+    transition: right 0.5s ease-in-out;
+   
+}
+
+.header .cart h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.header .cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.header .cart-items li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+   
+}
+
+.cart-items li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+    overflow:auto;
+}
+
+.cart-items li button {
+    margin-left: auto;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Style for the total price */
+.cart-total {
+    margin-top: 10px;
+    font-weight: 2rem;
+    font-size: 15px;
+    text-align: right;
+}
+
+/* Style for the "add to cart" buttons */
+.btn {
+   margin-top: 2rem;
+   display: inline-block;
+   padding: 1rem 3rem;
+   font-size: 1.7rem;
+   border-radius: .5rem;
+   border: .2rem solid var(--black);
+   color: var(--orange);
+   cursor: pointer;
+}
+
+.btn:hover{
+    background: var(--orange);
+    color: #fff;
+
+}
+
+  /* CSS for the checkout button */
+  #checkout-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+.header .cart.active{
+    right: 2rem;
+}
+
+  /* CSS for the shopping cart icon */
+
+.cart-count {
+    position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        right: 12.5%;
+        line-height: 20px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+        text-align: center;
+        top: 12.5%;
+        font-size: 10px;
+
+    }
+.cart-count:hover{
+    color: #000;
+}
+
+.cart-item-quantity {
+    font-size: 1.2em;
+    color: #555;
+}
+
+
+ /* CSS for the notification */
+ .notification {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    font-size: 10px;
+    background-color: var(--orange);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 9999;
+    text-align: center;
+    text-size-adjust: 20px;
+    
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-right: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.cart-item-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.remove-item-btn {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.remove-item-btn:hover {
+    background-color: #ff1a00;
+}
+
+
+/* CSS for the remove button */
+.remove-item-btn {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.remove-item-btn:hover {
+    background-color: #ff1a00;
+}
+
+/* Contact Section */
+.contact {
+    background: #fff;
+    padding: 5rem 0;
+}
+
+.contact .heading {
+    margin-bottom: 3rem;
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .map {
+    width: 100%;
+    max-width: 600px;
+    height: 00px;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.contact form {
+    flex: 1 1 35rem;
+    padding: 2rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact form .box {
+    width: 100%;
+    padding: 1.5rem;
+    background: #f1f1f1;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.contact form .box:focus {
+    border: 1px solid var(--orange);
+}
+
+.contact form .btn {
+    padding: 1.5rem;
+    background: var(--orange);
+    color: #fff;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact form .btn:hover {
+    background: var(--black);
+    transform: scale(1.05);
+}
+
+.contact form .btn:active {
+    transform: scale(1);
+}
+
+
+.checkout-container {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.cart-summary, .customer-info, .payment-info {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+
+/*  media queries  */
+
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding:2rem 9% ;
+    
+    }
+    
+}
+
+@media (max-width:768px){
+
+#menu-btn{
+    display: inline-block;
+}
+
+.header .search-form{
+width: 90%;
+}
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110% ;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+    
+
+}
+
+@media (max-width:450px){
+
+   html{
+    font-size: 50%;
+   }
+   .heading{
+    font-size: 2.5rem;
+   }
+   
+}
+
+
+/* Media Queries for Contact Section */
+@media (max-width: 768px) {
+    .contact .row {
+        flex-direction: column;
+    }
+
+    .contact .map {
+        height: 300px;
+    }
+
+    .contact form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .contact {
+        padding: 2rem 1rem;
+    }
+
+    .contact .heading {
+        font-size: 2.5rem;
+    }
+
+    .contact .map {
+        height: 250px;
+    }
+
+    .contact form .box {
+        font-size: 1.4rem;
+    }
+
+    .contact form .btn {
+        font-size: 1.4rem;
+    }
+}
+

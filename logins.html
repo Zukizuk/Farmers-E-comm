@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+
+
+:root{
+    --orange: #ff7800;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    --border:2rem solid rgba(0,0,0,.1);
+    --outline-hover:1rem solid var(var(--black));
+}
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f4f4f4;
+    }
+    form {
+        width: 50%;
+        background-color: #fff;
+        padding: 50px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    input[type="text"], input[type="email"], input[type="date"], select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .error {
+        color: red;
+        margin-top: 5px;
+    }
+
+    .header .logo{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    position: absolute;
+    top: 2%;
+    left: 45%;
+}
+legend{
+    font-weight: bold;
+}
+ p{
+    color: var(--light-color);
+ }
+.header .logo i{
+color:var(--orange) ;
+
+
+}
+</style>
+</head>
+<body>
+
+
+
+
+
+    <div class="header">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>Agri<span style="color: var(--orange);">Marts</span></a>
+
+    </div>
+<form id="registrationForm">
+    
+    <fieldset>
+        <legend>Personal Details</legend>
+        <p>We just need to fill some details</p>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male" selected>Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate" name="birthDate" required>
+    </fieldset>
+    <input type="checkbox"  id="agree" required>
+    <label for="agree">I agree to the Terms and Conditions</label>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        validateForm();
+    });
+
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var gender = document.getElementById("gender").value;
+        var birthDate = document.getElementById("birthDate").value;
+        var agree = document.getElementById("agree").checked;
+        var errorDiv = document.createElement("div");
+        var errorText = "";
+
+        if (!firstName || !lastName || !email || !gender || !birthDate) {
+            errorText = "Please fill in all fields.";
+        }
+
+        if (!validateEmail(email)) {
+            errorText += " Please enter a valid email address.";
+        }
+
+        if (!agree) {
+            errorText += " Please agree to the Terms and Conditions.";
+        }
+
+        if (errorText !== "") {
+            errorDiv.classList.add("error");
+            errorDiv.textContent = errorText;
+            document.getElementById("registrationForm").appendChild(errorDiv);
+        } else {
+            // Form submission logic here (e.g., sending data to server)
+            alert("Form submitted successfully!");
+            // Reset form after submission
+            document.getElementById("registrationForm").reset();
+        }
+    }
+
+    function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script>
+</body>
+</html>
